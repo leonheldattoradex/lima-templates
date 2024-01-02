@@ -1,0 +1,23 @@
+# just use whatever defaults
+vmType: null
+os: null
+arch: null
+
+images:
+- location: "https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-genericcloud-amd64.qcow2"
+  arch: "x86_64"
+- location: "https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-genericcloud-arm64.qcow2"
+  arch: "aarch64"
+
+# default: min(4, host CPU cores)
+cpus: 6
+# default: min("4GiB", half of host memory)
+memory: null
+# default: "100GiB"
+disk: null
+
+mounts:
+- location: "~"
+  writable: true
+- location: "/tmp/lima"
+  writable: true
